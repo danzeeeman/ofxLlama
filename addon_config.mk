@@ -101,10 +101,15 @@ vs:
 	# After compiling copy the following dynamic libraries to the executable directory
 	# only windows visual studio
 	# ADDON_DLLS_TO_COPY = 
+	 
 	ADDON_LIBS += libs/llama.cpp/lib/vs/llama.lib
 	ADDON_LIBS += libs/llama.cpp/lib/vs/ggml_static.lib
+	ADDON_LIBS += $(CUDA_PATH)/lib/x64/cuda.lib
+	ADDON_LIBS += $(CUDA_PATH)/lib/x64/cudart.lib
+	ADDON_LIBS += $(CUDA_PATH)/lib/x64/cublas.lib
 	ADDON_HEADER_SOURCES += libs/llama.cpp/include/ggml-cuda.h
 	ADDON_HEADER_SOURCES += libs/llama.cpp/include/ggml-opencl.h
+	ADDON_INCLUDES += $(CUDA_PATH)/include
 linuxarmv6l:
 linuxarmv7l:
 android/armeabi:	

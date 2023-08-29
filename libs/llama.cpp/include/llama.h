@@ -1,6 +1,6 @@
 #ifndef LLAMA_H
 #define LLAMA_H
-
+#define GGML_USE_CUBLAS
 #include "ggml.h"
 #ifdef GGML_USE_CUBLAS
 #include "ggml-cuda.h"
