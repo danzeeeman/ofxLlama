@@ -2,8 +2,7 @@
 
 
 #include "ofMain.h"
-#include "ofxAddonTemplate.h"
-
+#include "llama.h"
 
 class ofApp: public ofBaseApp{
 	public:

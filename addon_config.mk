@@ -15,11 +15,11 @@
 # and the PG will write to the console the kind of error and in which line it is
 
 meta:
-	ADDON_NAME = ofxAddonTemplate
-	ADDON_DESCRIPTION = ofxAddonTemplate is amazing!
-	ADDON_AUTHOR = @yournamehere
-	ADDON_TAGS = "addon" "template"
-	ADDON_URL = http://github.com/yournamehere/ofxAddonTemplate
+	ADDON_NAME = ofxLlama
+	ADDON_DESCRIPTION = ofxLlama is amazing!
+	ADDON_AUTHOR = @danzeeeman
+	ADDON_TAGS = "addon" "llm" "llama" "ml" "ai"
+	ADDON_URL = http://github.com/danzeeman/ofxLlama
 
 common:
 	# dependencies with other addons, a list of them separated by spaces 
@@ -30,7 +30,7 @@ common:
 	# but if the addon or addon libraries need special search paths they can be
 	# specified here separated by spaces or one per line using +=
 	# ADDON_INCLUDES =
-	
+
 	# any special flag that should be passed to the compiler when using this
 	# addon
 	# ADDON_CFLAGS =
@@ -54,10 +54,20 @@ common:
 	
 	# source files that will be included as header files explicitly
 	# ADDON_HEADER_SOURCES = 
+
+	ADDON_HEADER_SOURCES += libs/llama.cpp/include/llama.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/include/ggml.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/include/ggml-alloc.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/include/k_quants.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/src/common.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/src/console.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/src/grammar-parser.h
 	
 	# source files that will be included as c++ files explicitly
 	# ADDON_CPP_SOURCES = 
-	
+	ADDON_CPP_SOURCES += libs/llama.cpp/src/common.cpp
+	ADDON_CPP_SOURCES += libs/llama.cpp/src/console.cpp
+	ADDON_CPP_SOURCES += libs/llama.cpp/src/grammar-parser.cpp
 	# source files that will be included as objective c files explicitly
 	# ADDON_OBJC_SOURCES = 
 	
@@ -91,7 +101,10 @@ vs:
 	# After compiling copy the following dynamic libraries to the executable directory
 	# only windows visual studio
 	# ADDON_DLLS_TO_COPY = 
-	
+	ADDON_LIBS += libs/llama.cpp/lib/vs/llama.lib
+	ADDON_LIBS += libs/llama.cpp/lib/vs/ggml_static.lib
+	ADDON_HEADER_SOURCES += libs/llama.cpp/include/ggml-cuda.h
+	ADDON_HEADER_SOURCES += libs/llama.cpp/include/ggml-opencl.h
 linuxarmv6l:
 linuxarmv7l:
 android/armeabi:	
