@@ -1,7 +1,8 @@
 // Various helper functions and utilities
 
 #pragma once
-
+#define BUILD_NUMBER 1115
+#define BUILD_COMMIT "53885d7"
 #include "llama.h"
 
 #include <string>
